@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+<table>
+        <tr>
+            <th>Symbol</th>
+
+            <th>Name</th>
+
+            <th>Shares</th>
+
+            <th style="text-align: right;">Price bought</th>
+
+            <th style="text-align: right;">Current Price</th>
+
+            <th style="text-align: right;">Total Value</th>
+
+        </tr>
+    {%for data in rows%}
+        <tr>
+            <td>{{data.stock}}</td>
+
+            <td>{{data.stock_name}}</td>
+
+            <td>{{data.shares}}</td>
+
+            <td style="text-align: right;">{{data.price_buy}}</td>
+
+            <td style="text-align: right;">{{data.currentprice}}</td>
+
+            <td style="text-align: right;">{{data.value_shares}}</td>
+
+    {%endfor%}
+            </tr>
+            <tr>
+                <td>CASH</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td style="text-align: right;"><b>{{quote_cash}}</b></td>
+            </tr>
+            <tr>
+                <td>TOTAL</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td style="text-align: right;"><b>{{finalsum}}</b></td>
+            </tr>
+    </table>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <form action="/quote" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text"/>
+        </div>
+        <button class="btn btn-primary" type="submit">Quote</button>
+    </form>
+    <p></p>
+    <p></p>
+    <p>For more information look at IEX Trading Site:<br>
+    <a href=https://iextrading.com/apps/stocks/>https://iextrading.com/apps/stocks/</a></p><br/>
+{% endblock %}
